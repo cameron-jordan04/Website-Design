@@ -1,0 +1,66 @@
+.header {
+  font-size: 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.navbar {
+  position: sticky;
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  border: 2px solid #333;
+}
+
+.navbar a {
+  font-size: 15px;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  text-decoration: none;
+  width: 20%;
+}
+
+.navbar a:hover, .navbar .active {
+  background-color: #ddd;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.Search_Bar input[type=text] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: inherit;
+  font-family:inherit;
+  float: left;
+  width: 16%;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+/* Style the submit button */
+form.Search_Bar button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  float: left;
+  width: 4%;
+  padding: none;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+form.Search_Bar button:hover {
+  background: #0b7dda;
+}

@@ -1,0 +1,70 @@
+/*https://www.codesmite.com/article/how-to-create-pure-css-hexagonal-grids*/
+
+/* test push*/
+
+body {
+  background-color: white;
+}
+
+#grid {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    padding: 0; /* Clears unordered list default of 40px */
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#grid li {
+    list-style-type: none; /* removes the bullet point marker for the list */
+    position: relative;
+    float: left;
+    width: 27.85714285714286%;
+    padding: 0 0 32.16760145166612% 0; /* padding the bottom creates a fluid
+    height based on the containers width */
+    transform: rotate(-60deg) skewY(30deg);
+    /* background: #fd005f; - unneccesary bc this color is entirely hidden*/
+    overflow: hidden; /* clips the overflow shape partially */
+    visibility: hidden; /* clips the remaining shape overflow */
+}
+
+#grid li .hexagon {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fdbf00;
+    transform: skewY(-30deg) rotate(60deg);
+    overflow: hidden;
+}
+
+#grid li .hexagon:hover {
+  background-color: black;
+}
+
+#grid li * { /* the asterisk represents all child classes of the #grid li, and
+  forces them to inhereit the same properties */
+  visibility: visible;
+}
+
+#grid li:nth-child(3n+2) { /*adds margins to the central columns of hexagons &
+  the (3n+2) lets the margin be applied in a rolling manner to the central
+  hexagonal columns*/
+  margin: 0 1%;
+}
+
+#grid li:nth-child(6n+4), #grid li:nth-child(6n+5), #grid li:nth-child(6n+6) {
+  /*shifts every other row and adds vertical spacing to the rows of hexagons */
+    margin-top: -6.9285714285%;
+    margin-bottom: -6.9285714285%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+}
+
+#grid li:nth-child(6n+4) { /* applies a left margin when neccesary */
+    margin-left: 0.5%;
+}
